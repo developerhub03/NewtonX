@@ -1,0 +1,19 @@
+resteasy:
+  jaxrs:
+    app:
+      registration: property
+      classes: com.newtonx.assessment.app.JaxrsApplication
+spring:
+  jpa:
+    database: h2
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    platform: org.hibernate.dialect.HSQLDialect
+    url: jdbc:hsqldb:mem:.
+    username: SA
+    password: 
+    driverClassName: org.hsqldb.jdbcDriver
+server:
+  port: 8089
