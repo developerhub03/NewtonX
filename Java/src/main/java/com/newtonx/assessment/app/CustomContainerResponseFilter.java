@@ -14,7 +14,6 @@ import java.io.IOException;
  * exercise Spring beans as providers and,
  * specifically, in this case, as a filter.
  *
- * @author Fabio Carvalho (facarvalho@paypal.com or fabiocarvalho777@gmail.com)
  */
 @Component
 @Provider

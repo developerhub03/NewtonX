@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -14,14 +15,17 @@ import org.hibernate.annotations.CreationTimestamp;
 public class PersonDetails implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	@NotNull
 	private String firstName;
+	@NotNull
 	private String lastName;
 	@CreationTimestamp
 	private Date CreatedTime;
+
 	public Integer getId() {
 		return id;
 	}
@@ -103,5 +107,4 @@ public class PersonDetails implements Serializable {
 				+ CreatedTime + "]";
 	}
 
-	
 }

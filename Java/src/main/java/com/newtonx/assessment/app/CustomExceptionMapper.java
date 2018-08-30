@@ -12,7 +12,6 @@ import javax.ws.rs.ext.Provider;
 /**
  * Custom exception mapper for 404 cases.
  *
- * @author Fabio Carvalho (facarvalho@paypal.com or fabiocarvalho777@gmail.com)
  */
 @Component
 @Provider
