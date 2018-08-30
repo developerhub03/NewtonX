@@ -30,7 +30,7 @@ public class PersonController {
 	public Iterable<PersonDetails> getAllPersonDetails() {
 		Iterable<PersonDetails> listOfPersons = null;
 		listOfPersons = personService.listAllPersonDetails();
-		if (listOfPersons != null) {
+		if (listOfPersons.equals(null)) {
 			throw new WebApplicationException(Response.Status.NO_CONTENT);
 		}
 		return listOfPersons;
