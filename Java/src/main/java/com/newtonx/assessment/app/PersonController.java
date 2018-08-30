@@ -1,5 +1,8 @@
 package com.newtonx.assessment.app;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.NotFoundException;
@@ -24,37 +27,39 @@ public class PersonController {
 	@Autowired
 	private PersonServiceImpl personService;
 
-	@Path("/all")
+	@Path("/getalldetails")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Iterable<PersonDetails> getAllPersonDetails() {
 		Iterable<PersonDetails> listOfPersons = null;
+		List<PersonDetails> target = new ArrayList<>();
 		listOfPersons = personService.listAllPersonDetails();
-		if (listOfPersons.equals(null)) {
-			throw new WebApplicationException(Response.Status.NO_CONTENT);
+		listOfPersons.forEach(target::add);
+		if (target.size() == 0) {
+			throw new WebApplicationException(Response.Status.NO_CONTENT,"There are no person details yet.. please add first and then retrieve them...");
 		}
 		return listOfPersons;
 	}
 
 	@GET
-	@Path("/{id}")
+	@Path("/getdetails/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public PersonDetails getPersonDetailsById(@PathParam("id") Integer id) {
 		PersonDetails person = personService.getPersonDetailsById(id);
 		if (person == null) {
-			throw new NotFoundException();
+			throw new WebApplicationException(Response.Status.NOT_FOUND,"Person details for the id: " + id +" not found...");
 		}
 		return person;
 	}
 
 	@DELETE
-	@Path("/{id}")
+	@Path("/deletedetails/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public String deletePersonDetails(@PathParam("id") Integer id) {
 		try {
 			personService.deletePersonDetails(id);
 		} catch (Exception e) {
-			throw new WebApplicationException(Response.Status.NOT_MODIFIED);
+			throw new WebApplicationException(Response.Status.NOT_FOUND,"Person details for the id: " + id +" not found...");
 		}
 		return "Succesfully Deleted User:" + id;
 	}
@@ -67,7 +72,7 @@ public class PersonController {
 		try {
 			personDetail = personService.savePersonDetails(person);
 		} catch (Exception e) {
-			throw new WebApplicationException(Response.Status.NOT_ACCEPTABLE);
+			throw new WebApplicationException(Response.Status.NOT_ACCEPTABLE,"Give all the mandatory fields in the Person details");
 		}
 		return personDetail;
 	}

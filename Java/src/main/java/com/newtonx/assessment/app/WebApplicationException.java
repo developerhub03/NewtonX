@@ -30,4 +30,8 @@ public class WebApplicationException extends RuntimeException {
 	public WebApplicationException(Throwable cause, Response.Status status) {
 	}
 
+	public WebApplicationException(Response.Status status, String msg) {
+		super(msg);
+	}
+
 }
