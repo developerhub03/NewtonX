@@ -1,0 +1,162 @@
+/*app.component.ts style sheet*/
+
+
+h1 {
+    color:#cfd8dc;
+    background-color:black;
+    font-size:30px;
+    font-family: verdana;
+    padding:15px;
+	  margin-top:10px;
+    text-align:center;
+    
+}
+/* opacity: 0.5;
+    filter: alpha(opacity=50); 
+    */
+h2 {
+    font-family: Helvetica; 
+    color:#333;
+}
+
+#yes {
+	background: #90a090;
+	border-bottom: double 3px #aba;
+	border-left: solid 1px #9a9;
+	border-right: solid 1px #565;
+	border-top: solid 1px #9a9;
+	font: italic normal 230% 'Times New Roman', Times, serif;
+	letter-spacing: 0.2em;
+	margin: 0;
+	padding: 35px 20px 35px 60px;
+}
+
+img {
+    
+    margin-left: 25px;
+    margin-right: 16px;
+    width: 95%;
+    height: 68%;
+    
+    opacity: 0.9;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+
+    
+}
+.neel 
+    {
+        font-family: Helvetica;
+     margin: 0 0 2em 0;
+     list-style-type: none;
+     padding-left: 0;
+     width: 3.5em;
+     border-top-right-radius: 5px;
+    }
+
+
+
+#menu {
+    font-family:  Helvetica;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#lis {
+    float: left;
+}
+
+#lis a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#lis a:hover {
+    background-color: #111;
+}
+
+#lis a.active { 
+   color: #eee;
+   background-color:grey;
+
+   }
+
+/*contact-details.css*/
+a{
+    cursor: pointer;
+    cursor: hand;
+ }
+
+ .button {
+     color: #888;
+     font-family: Arial;
+     background-color: #eee;
+     border: none;
+     padding: 5px 10px;
+     border-radius: 4px;
+     cursor: pointer;
+     cursor: hand;
+ }
+
+ .button:hover {
+     background-color: #cfd8dc;
+ }
+ .button:disabled {
+     background-color: #eee;
+     color: #aaa;
+     cursor: auto;
+ }
+
+ .names:hover {
+     background-color: #cfd8dc;
+ }
+
+
+   button {
+     color: #888;
+     font-family: Arial;
+     background-color: #eee;
+     border: none;
+     padding: 5px 10px;
+     border-radius: 4px;
+     cursor: pointer;
+     cursor: hand;
+ }
+
+ button:hover {
+     background-color: #cfd8dc;
+ }
+ button:disabled {
+     background-color: #eee;
+     color: #aaa;
+     cursor: auto;
+ }
+
+ /*team.component*/
+
+ nav a {
+     padding: 5px 10px;
+     text-decoration: none;
+     margin-top: 10px;
+     display: inline-block;
+     background-color: #eee;
+     border-radius: 4px;
+ }
+
+ nav a:visited, a:link {
+     color: #607D8B;
+ }
+
+ nav a.hover {
+     color: #039be5;
+     background-color: #CFD8DC;
+ }
+
+ nav a.active {
+     color: #039be5;
+ }
